@@ -76,5 +76,4 @@ public struct TestRoomTileCoordinatesData : IComponentData {
 
 public struct TestRoomTileBlob {
     public BlobArray<Tile> TileBlob;
-
 }

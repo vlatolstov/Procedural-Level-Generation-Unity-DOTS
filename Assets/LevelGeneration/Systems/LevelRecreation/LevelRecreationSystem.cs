@@ -1,12 +1,14 @@
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Transforms;
 
 [UpdateInGroup(typeof(LevelRecreationSystemGroup))]
 [BurstCompile]
 public partial struct LevelRecreationSystem : ISystem {
     private EntityQuery _query;
+    private Random _random;
 
     [BurstCompile]
     public void OnCreate(ref SystemState state) {
@@ -17,6 +19,7 @@ public partial struct LevelRecreationSystem : ISystem {
         _query = state.GetEntityQuery(builder);
         state.RequireForUpdate(_query);
         state.RequireForUpdate<LevelGenerationData>();
+        state.RequireForUpdate<GenerationRandomData>();
         state.RequireForUpdate<TilePrefabsData>();
     }
 
@@ -27,6 +30,7 @@ public partial struct LevelRecreationSystem : ISystem {
         var em = state.EntityManager;
         var prefabs = SystemAPI.GetSingleton<TilePrefabsData>();
 
+        _random = SystemAPI.GetSingletonRW<GenerationRandomData>().ValueRW.Value;
         var levelScale = SystemAPI.GetSingleton<LevelGenerationData>().LevelScale;
         var walls = new NativeList<TilePositionComponent>(Allocator.Temp);
         var corridorFloor = new NativeList<TilePositionComponent>(Allocator.Temp);
@@ -56,9 +60,11 @@ public partial struct LevelRecreationSystem : ISystem {
         }
 
         var rendWalls = em.Instantiate(prefabs.WallTilePrefab, walls.Length, Allocator.Temp);
-        for (int i = 0; i <  walls.Length; i++) {
+        for (int i = 0; i < walls.Length; i++) {
+            float rotation = math.radians(90f * _random.NextInt(0, 5));
             em.SetComponentData(rendWalls[i], new LocalTransform {
                 Position = walls[i].Value,
+                Rotation = quaternion.RotateY(rotation),
                 Scale = levelScale
             });
         }
@@ -73,8 +79,10 @@ public partial struct LevelRecreationSystem : ISystem {
 
         var rendCorr = em.Instantiate(prefabs.CorridorTilePrefab, corridorFloor.Length, Allocator.Temp);
         for (int i = 0; i < corridorFloor.Length; i++) {
+            float rotation = math.radians(90f * _random.NextInt(0, 5));
             em.SetComponentData(rendCorr[i], new LocalTransform {
                 Position = corridorFloor[i].Value,
+                Rotation = quaternion.RotateY(rotation),
                 Scale = levelScale
             });
         }

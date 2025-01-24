@@ -77,7 +77,8 @@ public partial struct MatrixGenerationSystem : ISystem {
 
     private void CleanUpExistingLevelData(EntityCommandBuffer ecb, ref SystemState state) {
         if (!_currentLevelEntities.IsEmpty) {
-            ecb.DestroyEntity(_currentLevelEntities, EntityQueryCaptureMode.AtPlayback);
+            var arr = _currentLevelEntities.ToEntityArray(Allocator.Temp);
+            ecb.DestroyEntity(arr);
         }
 
         foreach ((MatrixData existingMatrix, Entity existingMatrixEntity) in SystemAPI.Query<MatrixData>().WithEntityAccess()) {
