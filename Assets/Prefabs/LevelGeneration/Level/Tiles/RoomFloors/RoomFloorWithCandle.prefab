@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4234821831152131828}
   - component: {fileID: 2123370295138899932}
   m_Layer: 0
-  m_Name: CorridorFloorTIle3
+  m_Name: RoomFloorWithCandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

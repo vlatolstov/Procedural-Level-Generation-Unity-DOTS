@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd10c280558a16e4bb2018e776d16641, type: 3}
   m_Name: LevelGenerationSettings
   m_EditorClassIdentifier: 
-  Seed: 1
-  CellSize: 4
-  SideRoomsGap: 10
-  CellsPerRoom: 5
+  Seed: 0
+  CellSize: 11
+  SideRoomsGap: 25
+  CellsPerRoom: 7
   LevelScale: 1
-  RoomsCount: 1
-  InnerZoneHallsCount: 1
+  RoomsCount: 8
+  InnerZoneHallsCount: 3
   AdditionalHallEntranceProbability: 100
-  MinCorridorWidth: 1
-  MaxCorridorWidth: 3
-  ConnectNotMSTNodesProbability: 20
+  MinCorridorWidth: 3
+  MaxCorridorWidth: 5
+  ConnectNotMSTNodesProbability: 33
   NodesPercentToRemove: 33
   AllowedTypesMask: 1

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 368169661893424010}
   - component: {fileID: 3859897707820266533}
   m_Layer: 0
-  m_Name: RoomFloorTile2
+  m_Name: CorridorFloor_WithHatchAndLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 576225134425373136, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.117
+      value: -0.157
       objectReference: {fileID: 0}
     - target: {fileID: 576225134425373136, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_LocalPosition.z
@@ -160,27 +160,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Range
-      value: 1.62
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Color.b
-      value: 0.906208
+      value: 0.001742011
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Color.g
-      value: 0.45490196
+      value: 0.00035599942
+      objectReference: {fileID: 0}
+    - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
+      propertyPath: m_Color.r
+      value: 0.28627452
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Intensity
-      value: 39.76
+      value: 8.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Shadows.m_NearPlane
-      value: 0.099999994
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3481239428894074726, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Name
-      value: CandleLight
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 8780237468796589778, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier

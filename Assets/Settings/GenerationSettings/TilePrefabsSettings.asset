@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97393180d38ad91429fa30384ab5c93f, type: 3}
   m_Name: TilePrefabsSettings
   m_EditorClassIdentifier: 
-  CorridorTilePrefab: {fileID: 327542461537906246, guid: 6c3f3d3f210251c47aa72f62944373d5, type: 3}
-  WallTilePrefab: {fileID: 3762045336429672419, guid: 16bf50e85eccddd4aa2ec0a7fd13c1dd, type: 3}
-  SpaceTilePrefab: {fileID: 3078613350263307467, guid: 4049a86e4a05d834096fc21e9f496fa1, type: 3}
-  SpawnPointPrefab: {fileID: 7004722024506775266, guid: 20bdbcf3eeb32a24baf3898112a42447, type: 3}
-  RoomTilePrefab: {fileID: 1116467677230309766, guid: 553e5ded14a57c240820d10bbd408675, type: 3}
-  HallTilePrefab: {fileID: 4816259831038574492, guid: 01f0364b31756cd4689a5d0965901d8d, type: 3}
+  CorridorTilePrefab: {fileID: 2534545160762109834, guid: 7f9b5223f3c63584a9304f6849875322, type: 3}
+  WallTilePrefab: {fileID: 6563851611442112151, guid: d5a2b16e60f84fb4386e291ecf6df492, type: 3}
+  SpaceTilePrefab: {fileID: 7004722024506775266, guid: 20bdbcf3eeb32a24baf3898112a42447, type: 3}
+  SpawnPointPrefab: {fileID: 2160352931290194356, guid: 67878578172611842a93e86d47af9847, type: 3}
+  RoomTilePrefab: {fileID: 2534545160762109834, guid: 622105261bc816a48a21781305581fd0, type: 3}
+  HallTilePrefab: {fileID: 2534545160762109834, guid: c710984a04c481542be2a35d3e0b718d, type: 3}
   RoomSize:
-    x: 6
-    y: 6
+    x: 15
+    y: 15
   RoomType: 2
-  TestRoomPrefab: {fileID: 78845652208278640, guid: 00ba2bca27fa99a4f9bf07be39a0eeb7, type: 3}
+  TestRoomPrefab: {fileID: 78845652208278640, guid: 94f34c28b9bc1a345a4f899bd732ca1b, type: 3}
