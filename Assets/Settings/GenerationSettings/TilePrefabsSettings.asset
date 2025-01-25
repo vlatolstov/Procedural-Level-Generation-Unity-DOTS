@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 5330381775636435481, guid: 425d63a02a5dd264b83a79f659a7e591, type: 3}
   - {fileID: 5114969824427001948, guid: 0d0c8cc65b0ae1848b0938dd713e7916, type: 3}
   RoomSize:
-    x: 15
-    y: 15
+    x: 5
+    y: 5
   RoomType: 2
-  TestRoomPrefab: {fileID: 78845652208278640, guid: 94f34c28b9bc1a345a4f899bd732ca1b, type: 3}
+  TestRoomPrefab: {fileID: 78845652208278640, guid: 00ba2bca27fa99a4f9bf07be39a0eeb7, type: 3}

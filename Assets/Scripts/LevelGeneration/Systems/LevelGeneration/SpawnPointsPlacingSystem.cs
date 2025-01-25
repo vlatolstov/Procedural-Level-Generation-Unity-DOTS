@@ -22,7 +22,7 @@ partial struct SpawnPointsPlacingSystem : ISystem {
     [BurstCompile]
     public void OnUpdate(ref SystemState state) {
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] SpawnPointsPlacingSystem starts");
-        
+
         var configEntity = _query.GetSingletonEntity();
         var generationAspect = SystemAPI.GetAspect<LevelGenerationAspect>(configEntity);
         var allowedTypesMask = generationAspect.LevelGenerationData.ValueRO.AllowedTypesMask;
@@ -34,7 +34,7 @@ partial struct SpawnPointsPlacingSystem : ISystem {
         };
 
         state.Dependency = job.Schedule(matrix.Length, 64, state.Dependency);
-
+        
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] SpawnPointsPlacingSystem ends");
     }
 }

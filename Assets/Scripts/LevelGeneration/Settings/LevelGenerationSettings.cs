@@ -4,7 +4,6 @@ using UnityEditor;
 
 using UnityEngine;
 
-using static UnityEngine.GraphicsBuffer;
 
 [CreateAssetMenu(fileName = "LevelGenerationSettings", menuName = "DMMFS/Settings/LevelGeneration/LevelGenerationSettings")]
 public class LevelGenerationSettings : ScriptableObject {
@@ -19,6 +18,8 @@ public class LevelGenerationSettings : ScriptableObject {
     public int CellsPerRoom;
     [Tooltip("Scale to convert level from integer based matrix.")]
     public float LevelScale;
+    [Tooltip("Probability of creating tile variant instead of base, in percents, value will be clamped in range 0 to 100.")]
+    public int VariationChance;
 
     [Space]
     [Header("RoomsPropertiesData")]

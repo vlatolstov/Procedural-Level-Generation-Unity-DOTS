@@ -6,6 +6,7 @@ public struct LevelGenerationData : IComponentData {
     public int SideRoomsGap;
     public int CellsPerRoom;
     public float LevelScale;
+    public int VariationChance;
 
     public int RoomsCount;
     public int InnerZoneHallsCount;

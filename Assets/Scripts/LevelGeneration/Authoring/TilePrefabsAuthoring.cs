@@ -2,7 +2,10 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Entities.Editor;
 using Unity.Mathematics;
+
 using UnityEngine;
+
+using static UnityEngine.EventSystems.EventTrigger;
 
 class TilePrefabsAuthoring : MonoBehaviour {
 
@@ -16,28 +19,35 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
 
         var settings = authoring.PrefabsSettings;
 
-        CreateTilePrefabsData(entity, settings);
+        var prefabsData = GetTilePrefabsData(settings);
+        AddComponent(entity, prefabsData);
 
         CreateTileCoordinatesData(entity, settings);
     }
 
-    private void CreateTilePrefabsData(Entity entity, TilePrefabsSettings settings) {
-        //var corridorTilePrefab = GetEntity(settings.CorridorTilePrefab, TransformUsageFlags.Renderable);
-        //var wallTilePrefab = GetEntity(settings.WallTilePrefab, TransformUsageFlags.Renderable);
-        //var spaceTilePrefab = GetEntity(settings.SpaceTilePrefab, TransformUsageFlags.Renderable);
-        //var spawnPointPrefab = GetEntity(settings.SpawnPointPrefab, TransformUsageFlags.Renderable);
-        //var roomTilePrefab = GetEntity(settings.RoomTilePrefab, TransformUsageFlags.Renderable);
-        //var hallTilePrefab = GetEntity(settings.HallTilePrefab, TransformUsageFlags.Renderable);
-
-        //AddComponent(entity, new TilePrefabsData {
-        //    CorridorTilePrefab = corridorTilePrefab,
-        //    WallTilePrefab = wallTilePrefab,
-        //    SpaceTilePrefab = spaceTilePrefab,
-        //    SpawnPointPrefab = spawnPointPrefab,
-        //    RoomTilePrefab = roomTilePrefab,
-        //    HallTilePrefab = hallTilePrefab
-        //});
+    private TilePrefabsData GetTilePrefabsData(TilePrefabsSettings settings) {
+        return new() {
+            BaseCorridorFloorTiles = GetEntitiesNativeArray(settings.BaseCorridorFloorTiles),
+            VariantCorridorFloorTiles = GetEntitiesNativeArray(settings.VariantCorridorFloorTiles),
+            BaseCorridorWallTiles = GetEntitiesNativeArray(settings.BaseCorridorWallTiles),
+            VariantCorridorWallTiles = GetEntitiesNativeArray(settings.VariantCorridorWallTiles),
+            BaseRoomFloorTiles = GetEntitiesNativeArray(settings.BaseRoomFloorTiles),
+            VariantRoomFloorTiles = GetEntitiesNativeArray(settings.VariantRoomFloorTiles),
+            BaseRoomWallTiles = GetEntitiesNativeArray(settings.BaseRoomWallTiles),
+            VariantRoomWallTiles = GetEntitiesNativeArray(settings.VariantRoomWallTiles)
+        };
     }
+
+    private NativeArray<Entity> GetEntitiesNativeArray(GameObject[] source) {
+        int n = source.Length;
+        Entity[] target = new Entity[n];
+        for (int i = 0; i < n; i++) {
+            target[i] = GetEntity(source[i], TransformUsageFlags.Renderable);
+        }
+        NativeArray<Entity> prefabs = new(target, Allocator.Persistent);
+        return prefabs;
+    }
+
     private void CreateTileCoordinatesData(Entity entity, TilePrefabsSettings settings) {
         var roomPrefab = settings.TestRoomPrefab;
         var childrenTileInfo = roomPrefab.GetComponentsInChildren<TileAuthoring>();

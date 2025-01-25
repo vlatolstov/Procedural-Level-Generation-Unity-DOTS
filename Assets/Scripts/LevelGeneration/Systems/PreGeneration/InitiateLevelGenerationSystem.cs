@@ -39,6 +39,7 @@ partial class InitiateLevelGenerationSystem : SystemBase {
             SideRoomsGap = settings.SideRoomsGap,
             CellsPerRoom = settings.CellsPerRoom,
             LevelScale = settings.LevelScale,
+            VariationChance = settings.VariationChance,
             RoomsCount = settings.RoomsCount,
             InnerZoneHallsCount = settings.InnerZoneHallsCount,
             AdditionalHallEntranceProbability = settings.AdditionalHallEntranceProbability,

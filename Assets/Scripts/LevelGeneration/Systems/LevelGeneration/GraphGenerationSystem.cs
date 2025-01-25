@@ -4,7 +4,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 
 [UpdateInGroup(typeof(LevelGenerationSystemGroup))]
-[UpdateAfter(typeof(CreateTilesEntitiesSystem))]
 [BurstCompile]
 partial struct GraphGenerationSystem : ISystem {
     private EntityQuery _query;
