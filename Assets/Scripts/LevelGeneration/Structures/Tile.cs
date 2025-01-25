@@ -3,7 +3,7 @@ using Unity.Mathematics;
 public struct Tile {
     public readonly int2 Position;
     public RoomElement Element;
-    public readonly RoomType Type;
+    public RoomType Type;
     public readonly bool IsGraphNode;
     public bool IsSpawnPoint;
 

@@ -160,23 +160,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Range
-      value: 1.16
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Color.b
-      value: 0.001742011
+      value: 0.05139729
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Color.g
-      value: 0.00035599942
+      value: 0.05139729
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Color.r
-      value: 0.2
+      value: 0.5188679
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Intensity
-      value: 8.33
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Lightmapping

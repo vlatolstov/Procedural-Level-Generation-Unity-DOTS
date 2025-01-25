@@ -154,9 +154,9 @@ public partial struct LevelRecreationSystem : ISystem {
 
     private Entity GetRandomPrefab(int2 basic, int2 variant, bool basicOnly) {
         if (!basicOnly && _random.NextFloat() < _variantProbability) {
-            return _prefabs[_random.NextInt(variant.x, variant.y)].Prefab;
+            return _prefabs[_random.NextInt(variant.x, variant.y + 1)].Prefab;
         }
-        return _prefabs[_random.NextInt(basic.x, basic.y)].Prefab;
+        return _prefabs[_random.NextInt(basic.x, basic.y + 1)].Prefab;
     }
     private NativeHashMap<int, quaternion> GetAngles(Allocator allocator) {
         var angles = new NativeHashMap<int, quaternion>(4, allocator);

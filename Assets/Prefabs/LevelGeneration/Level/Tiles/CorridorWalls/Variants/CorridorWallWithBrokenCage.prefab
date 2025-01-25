@@ -438,8 +438,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5586201953859055411}
     m_Modifications:
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_Range
+      value: 2.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Intensity
-      value: 1.37
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Lightmapping

@@ -15,14 +15,14 @@ MonoBehaviour:
   Seed: 1
   CellSize: 4
   SideRoomsGap: 10
-  CellsPerRoom: 3
+  CellsPerRoom: 4
   LevelScale: 1
-  VariationChance: 100
+  VariationChance: 12
   RoomsCount: 15
-  InnerZoneHallsCount: 3
+  InnerZoneHallsCount: 7
   AdditionalHallEntranceProbability: 100
   MinCorridorWidth: 1
-  MaxCorridorWidth: 2
-  ConnectNotMSTNodesProbability: 33
+  MaxCorridorWidth: 3
+  ConnectNotMSTNodesProbability: 58
   NodesPercentToRemove: 33
   AllowedTypesMask: 1

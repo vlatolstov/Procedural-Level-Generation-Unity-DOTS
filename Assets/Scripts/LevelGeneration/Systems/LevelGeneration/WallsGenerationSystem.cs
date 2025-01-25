@@ -29,7 +29,6 @@ partial struct WallsGenerationSystem : ISystem {
 
         var config = _query.GetSingletonEntity();
 
-        //var aspect = SystemAPI.GetAspect<LevelGenerationAspect>(config);
         var level = SystemAPI.GetSingleton<LevelData>().Level;
         _matrix = SystemAPI.GetSingleton<MatrixData>().Matrix;
         
@@ -57,7 +56,7 @@ partial struct WallsGenerationSystem : ISystem {
     }
 }
 
-public struct PlaceWallsJob : IJobParallelFor {
+public partial struct PlaceWallsJob : IJobParallelFor {
     public NativeArray<Tile> Matrix;
     public NativeArray<Tile>.ReadOnly ReadOnlyMatrix;
     public NativeArray<int2> Directions;
@@ -98,9 +97,9 @@ public struct PlaceWallsJob : IJobParallelFor {
                 _ => RoomElement.TopWall
             };
 
-            element |= cur.Element;
+            cur.Element |= element;
 
-            Matrix[index] = new(cur.Position, element, adjTile.Type);
+            Matrix[index] = new(cur.Position, cur.Element, adjTile.Type);
         }
     }
     private readonly int ConvertToIntegerIndex(int2 position) => position.y * LevelSizeX + position.x;
