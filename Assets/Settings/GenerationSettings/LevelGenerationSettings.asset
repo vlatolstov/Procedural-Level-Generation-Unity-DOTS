@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Seed: 1
   CellSize: 4
-  SideRoomsGap: 25
+  SideRoomsGap: 10
   CellsPerRoom: 5
   LevelScale: 1
   RoomsCount: 1
   InnerZoneHallsCount: 1
   AdditionalHallEntranceProbability: 100
   MinCorridorWidth: 1
-  MaxCorridorWidth: 2
+  MaxCorridorWidth: 3
   ConnectNotMSTNodesProbability: 20
   NodesPercentToRemove: 33
-  AllowedTypesMask: 5
+  AllowedTypesMask: 1

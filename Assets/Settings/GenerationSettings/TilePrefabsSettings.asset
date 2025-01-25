@@ -16,7 +16,7 @@ MonoBehaviour:
   WallTilePrefab: {fileID: 3762045336429672419, guid: 16bf50e85eccddd4aa2ec0a7fd13c1dd, type: 3}
   SpaceTilePrefab: {fileID: 3078613350263307467, guid: 4049a86e4a05d834096fc21e9f496fa1, type: 3}
   SpawnPointPrefab: {fileID: 7004722024506775266, guid: 20bdbcf3eeb32a24baf3898112a42447, type: 3}
-  RoomTilePrefab: {fileID: 4816259831038574492, guid: 01f0364b31756cd4689a5d0965901d8d, type: 3}
+  RoomTilePrefab: {fileID: 1116467677230309766, guid: 553e5ded14a57c240820d10bbd408675, type: 3}
   HallTilePrefab: {fileID: 4816259831038574492, guid: 01f0364b31756cd4689a5d0965901d8d, type: 3}
   RoomSize:
     x: 6
