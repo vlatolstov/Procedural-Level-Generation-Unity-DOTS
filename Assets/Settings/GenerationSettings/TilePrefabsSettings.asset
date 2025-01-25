@@ -12,12 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97393180d38ad91429fa30384ab5c93f, type: 3}
   m_Name: TilePrefabsSettings
   m_EditorClassIdentifier: 
-  CorridorTilePrefab: {fileID: 2534545160762109834, guid: 7f9b5223f3c63584a9304f6849875322, type: 3}
-  WallTilePrefab: {fileID: 6563851611442112151, guid: d5a2b16e60f84fb4386e291ecf6df492, type: 3}
-  SpaceTilePrefab: {fileID: 7004722024506775266, guid: 20bdbcf3eeb32a24baf3898112a42447, type: 3}
-  SpawnPointPrefab: {fileID: 2160352931290194356, guid: 67878578172611842a93e86d47af9847, type: 3}
-  RoomTilePrefab: {fileID: 2534545160762109834, guid: 622105261bc816a48a21781305581fd0, type: 3}
-  HallTilePrefab: {fileID: 2534545160762109834, guid: c710984a04c481542be2a35d3e0b718d, type: 3}
+  BaseCorridorFloorTiles:
+  - {fileID: 4816259831038574492, guid: 01f0364b31756cd4689a5d0965901d8d, type: 3}
+  VariantCorridorFloorTiles:
+  - {fileID: 2671014515058748639, guid: b1f9b618b082ac7499f20f370ae76c63, type: 3}
+  - {fileID: 6289416204557045293, guid: af88e903dcf25d84aa5f03514e3a538c, type: 3}
+  - {fileID: 8284104463125599396, guid: 7cbdb75e423f07a43bd9198ed751e506, type: 3}
+  - {fileID: 1116467677230309766, guid: 553e5ded14a57c240820d10bbd408675, type: 3}
+  - {fileID: 6394660892818979194, guid: d04ba31757988c1418829fc1e0e6b0e7, type: 3}
+  BaseCorridorWallTiles:
+  - {fileID: 622375508758756024, guid: c35e2833640905a4fa80a9097a6af8fc, type: 3}
+  - {fileID: 4373201474558561814, guid: 43561f185ebe7f542b30dd1b292ad060, type: 3}
+  - {fileID: 778927439560561957, guid: 103ec2f775013164697b58b64a48d6f4, type: 3}
+  - {fileID: 2456052719440090987, guid: e5bf0559006e7e14f9bacb4e65a249c7, type: 3}
+  VariantCorridorWallTiles:
+  - {fileID: 4674751525527182953, guid: 78ceeb5540508d14896a62a96340e489, type: 3}
+  - {fileID: 3453560395237745622, guid: 9f27ea9d6d3298c4ca56498cb2f967bb, type: 3}
+  - {fileID: 8758007195745954074, guid: 963967ebce844664b8101859081e851f, type: 3}
+  - {fileID: 5513530123820004495, guid: 5dd6d1a7a9fe90f448abbdd6dd31c23b, type: 3}
+  - {fileID: 7829248268997529135, guid: a84727051aa5aa844a2d5414fd48990f, type: 3}
+  - {fileID: 8870931095390083249, guid: 1611f940cbf8168459f045d23835c437, type: 3}
+  - {fileID: 5455607604120038771, guid: 27556e815c43f0749a202db85522753e, type: 3}
+  - {fileID: 2504832322591373305, guid: bde7c9114f58ea34eae68a779df2f6ba, type: 3}
+  BaseRoomFloorTiles:
+  - {fileID: 327542461537906246, guid: 6c3f3d3f210251c47aa72f62944373d5, type: 3}
+  VariantRoomFloorTiles:
+  - {fileID: 3861990868351918822, guid: c01798983b1cfea42aebd27abf6eb096, type: 3}
+  - {fileID: 411693015464796901, guid: 085389db6af3e1e40807e7f6ca6a3fec, type: 3}
+  - {fileID: 5000209364708606975, guid: f91fbc5b0a105274097e5e5a751e4d5f, type: 3}
+  - {fileID: 2730984700106415947, guid: aaec2cf629ed6b443a524c4d6803b122, type: 3}
+  BaseRoomWallTiles:
+  - {fileID: 7919883946059022688, guid: b9b236b950e8a524cacf0d92dbb45803, type: 3}
+  VariantRoomWallTiles:
+  - {fileID: 7664768558589043080, guid: fe8e63a41137d8e4589fbb78eadddf44, type: 3}
+  - {fileID: 3945424360240943289, guid: 15a91804d53d76342bbbb59488219af2, type: 3}
+  - {fileID: 200790721758974957, guid: fe3007a12feb6b240899458582c18cf6, type: 3}
+  - {fileID: 3441472031963185876, guid: 8d3021553f3c5a64bb3e35d273e207d5, type: 3}
+  - {fileID: 5330381775636435481, guid: 425d63a02a5dd264b83a79f659a7e591, type: 3}
+  - {fileID: 5114969824427001948, guid: 0d0c8cc65b0ae1848b0938dd713e7916, type: 3}
   RoomSize:
     x: 15
     y: 15

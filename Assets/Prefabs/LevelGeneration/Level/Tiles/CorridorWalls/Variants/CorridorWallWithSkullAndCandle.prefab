@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5063361037769759823, guid: 892b13755207d384c9e00d0b293abebf, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5380674913478290848, guid: 892b13755207d384c9e00d0b293abebf, type: 3}
       propertyPath: m_Name
       value: Candlestick

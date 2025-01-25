@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7966802562277102937}
   m_Layer: 0
-  m_Name: CorridorWallWithWeapons
+  m_Name: CorridorWall_WithWeapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

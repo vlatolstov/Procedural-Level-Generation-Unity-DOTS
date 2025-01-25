@@ -437,6 +437,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5586201953859055411}
     m_Modifications:
+    - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_Intensity
+      value: 1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3267485197947008695, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Name
       value: Torch (1)
@@ -480,6 +488,18 @@ PrefabInstance:
     - target: {fileID: 3526004205315778956, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255878241143802411, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255878241143802411, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0941
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255878241143802411, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0679
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

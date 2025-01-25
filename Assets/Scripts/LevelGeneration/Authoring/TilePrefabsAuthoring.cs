@@ -22,21 +22,21 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
     }
 
     private void CreateTilePrefabsData(Entity entity, TilePrefabsSettings settings) {
-        var corridorTilePrefab = GetEntity(settings.CorridorTilePrefab, TransformUsageFlags.Renderable);
-        var wallTilePrefab = GetEntity(settings.WallTilePrefab, TransformUsageFlags.Renderable);
-        var spaceTilePrefab = GetEntity(settings.SpaceTilePrefab, TransformUsageFlags.Renderable);
-        var spawnPointPrefab = GetEntity(settings.SpawnPointPrefab, TransformUsageFlags.Renderable);
-        var roomTilePrefab = GetEntity(settings.RoomTilePrefab, TransformUsageFlags.Renderable);
-        var hallTilePrefab = GetEntity(settings.HallTilePrefab, TransformUsageFlags.Renderable);
+        //var corridorTilePrefab = GetEntity(settings.CorridorTilePrefab, TransformUsageFlags.Renderable);
+        //var wallTilePrefab = GetEntity(settings.WallTilePrefab, TransformUsageFlags.Renderable);
+        //var spaceTilePrefab = GetEntity(settings.SpaceTilePrefab, TransformUsageFlags.Renderable);
+        //var spawnPointPrefab = GetEntity(settings.SpawnPointPrefab, TransformUsageFlags.Renderable);
+        //var roomTilePrefab = GetEntity(settings.RoomTilePrefab, TransformUsageFlags.Renderable);
+        //var hallTilePrefab = GetEntity(settings.HallTilePrefab, TransformUsageFlags.Renderable);
 
-        AddComponent(entity, new TilePrefabsData {
-            CorridorTilePrefab = corridorTilePrefab,
-            WallTilePrefab = wallTilePrefab,
-            SpaceTilePrefab = spaceTilePrefab,
-            SpawnPointPrefab = spawnPointPrefab,
-            RoomTilePrefab = roomTilePrefab,
-            HallTilePrefab = hallTilePrefab
-        });
+        //AddComponent(entity, new TilePrefabsData {
+        //    CorridorTilePrefab = corridorTilePrefab,
+        //    WallTilePrefab = wallTilePrefab,
+        //    SpaceTilePrefab = spaceTilePrefab,
+        //    SpawnPointPrefab = spawnPointPrefab,
+        //    RoomTilePrefab = roomTilePrefab,
+        //    HallTilePrefab = hallTilePrefab
+        //});
     }
     private void CreateTileCoordinatesData(Entity entity, TilePrefabsSettings settings) {
         var roomPrefab = settings.TestRoomPrefab;
