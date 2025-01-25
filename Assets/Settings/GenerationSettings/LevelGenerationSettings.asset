@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: LevelGenerationSettings
   m_EditorClassIdentifier: 
   Seed: 1
-  CellSize: 5
+  CellSize: 4
   SideRoomsGap: 10
   CellsPerRoom: 3
   LevelScale: 1
-  VariationChance: 0
-  RoomsCount: 2
-  InnerZoneHallsCount: 1
+  VariationChance: 100
+  RoomsCount: 15
+  InnerZoneHallsCount: 3
   AdditionalHallEntranceProbability: 100
   MinCorridorWidth: 1
   MaxCorridorWidth: 2

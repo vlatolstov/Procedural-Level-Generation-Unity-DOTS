@@ -19,33 +19,63 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
 
         var settings = authoring.PrefabsSettings;
 
-        var prefabsData = GetTilePrefabsData(settings);
-        AddComponent(entity, prefabsData);
+        var prefabs = AddBuffer<TilePrefab>(entity);
+        var indexes = ConvertPrefabsToEntities(settings, ref prefabs);
+        AddComponent(entity, indexes);
 
         CreateTileCoordinatesData(entity, settings);
     }
 
-    private TilePrefabsData GetTilePrefabsData(TilePrefabsSettings settings) {
-        return new() {
-            BaseCorridorFloorTiles = GetEntitiesNativeArray(settings.BaseCorridorFloorTiles),
-            VariantCorridorFloorTiles = GetEntitiesNativeArray(settings.VariantCorridorFloorTiles),
-            BaseCorridorWallTiles = GetEntitiesNativeArray(settings.BaseCorridorWallTiles),
-            VariantCorridorWallTiles = GetEntitiesNativeArray(settings.VariantCorridorWallTiles),
-            BaseRoomFloorTiles = GetEntitiesNativeArray(settings.BaseRoomFloorTiles),
-            VariantRoomFloorTiles = GetEntitiesNativeArray(settings.VariantRoomFloorTiles),
-            BaseRoomWallTiles = GetEntitiesNativeArray(settings.BaseRoomWallTiles),
-            VariantRoomWallTiles = GetEntitiesNativeArray(settings.VariantRoomWallTiles)
-        };
+    private TilesIndexesInBufferComponent ConvertPrefabsToEntities(TilePrefabsSettings settings, ref DynamicBuffer<TilePrefab> buffer) {
+
+        int index = 0;
+        TilesIndexesInBufferComponent result = new();
+
+        int start = index;
+        ConvertToEntities(settings.BaseCorridorFloorTiles, ref index, ref buffer);
+        int end = index - 1;
+        result.BaseCorridorFloorTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.VariantCorridorFloorTiles, ref index, ref buffer);
+        end = index - 1;
+        result.VariantCorridorFloorTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.BaseCorridorWallTiles, ref index, ref buffer);
+        end = index - 1;
+        result.BaseCorridorWallTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.VariantCorridorWallTiles, ref index, ref buffer);
+        end = index - 1;
+        result.VariantCorridorWallTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.BaseRoomFloorTiles, ref index, ref buffer);
+        end = index - 1;
+        result.BaseRoomFloorTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.VariantRoomFloorTiles, ref index, ref buffer);
+        end = index - 1;
+        result.VariantRoomFloorTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.BaseRoomWallTiles, ref index, ref buffer);
+        end = index - 1;
+        result.BaseRoomWallTiles = new(start, end);
+        start = index;
+        ConvertToEntities(settings.VariantRoomWallTiles, ref index, ref buffer);
+        end = index - 1;
+        result.VariantRoomWallTiles = new(start, end);
+
+        return result;
     }
 
-    private NativeArray<Entity> GetEntitiesNativeArray(GameObject[] source) {
-        int n = source.Length;
-        Entity[] target = new Entity[n];
-        for (int i = 0; i < n; i++) {
-            target[i] = GetEntity(source[i], TransformUsageFlags.Renderable);
+    private void ConvertToEntities(GameObject[] source, ref int index, ref DynamicBuffer<TilePrefab> buffer) {
+        foreach (var go in source) {
+            TilePrefab prefab = new() {
+                Prefab = GetEntity(go, TransformUsageFlags.Renderable)
+            };
+
+            buffer.Add(prefab);
+            index++;
         }
-        NativeArray<Entity> prefabs = new(target, Allocator.Persistent);
-        return prefabs;
     }
 
     private void CreateTileCoordinatesData(Entity entity, TilePrefabsSettings settings) {

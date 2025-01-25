@@ -16,6 +16,7 @@ public partial struct LevelRecreationSystem : ISystem {
     private float _levelScale;
     private float _variantProbability;
     private NativeHashMap<int, quaternion> _angles;
+    private NativeArray<TilePrefab> _prefabs;
 
     [BurstCompile]
     public void OnCreate(ref SystemState state) {
@@ -23,7 +24,7 @@ public partial struct LevelRecreationSystem : ISystem {
         state.RequireForUpdate<LevelGenerationData>();
         state.RequireForUpdate<MatrixData>();
         state.RequireForUpdate<GenerationRandomData>();
-        state.RequireForUpdate<TilePrefabsData>();
+        state.RequireForUpdate<TilesIndexesInBufferComponent>();
     }
 
     [BurstCompile]
@@ -33,7 +34,11 @@ public partial struct LevelRecreationSystem : ISystem {
         state.CompleteDependency();
         var ecb = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>()
             .CreateCommandBuffer(state.WorldUnmanaged);
-        var prefabs = SystemAPI.GetSingleton<TilePrefabsData>();
+
+        var prefabsEntity = SystemAPI.GetSingletonEntity<TilesIndexesInBufferComponent>();
+        _prefabs = SystemAPI.GetBuffer<TilePrefab>(prefabsEntity).AsNativeArray();
+        var indexes = SystemAPI.GetComponent<TilesIndexesInBufferComponent>(prefabsEntity);
+
         _random = SystemAPI.GetSingletonRW<GenerationRandomData>().ValueRW.Value;
         var levelGenerationData = SystemAPI.GetSingleton<LevelGenerationData>();
         _levelScale = levelGenerationData.LevelScale;
@@ -78,10 +83,10 @@ public partial struct LevelRecreationSystem : ISystem {
             //UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] LevelRecreationSystem ends");
         }
 
-        GenerateFloor(roomsFloor, prefabs.BaseRoomFloorTiles, prefabs.VariantRoomFloorTiles, ecb);
-        GenerateFloor(corridorsFloor, prefabs.BaseCorridorFloorTiles, prefabs.VariantCorridorFloorTiles, ecb);
-        GenerateWalls(roomsWalls, prefabs.BaseRoomWallTiles, prefabs.VariantRoomWallTiles, ecb);
-        GenerateWalls(corridorsWalls, prefabs.BaseCorridorWallTiles, prefabs.VariantCorridorWallTiles, ecb);
+        GenerateFloor(roomsFloor, indexes.BaseRoomFloorTiles, indexes.VariantRoomFloorTiles, ecb);
+        GenerateFloor(corridorsFloor, indexes.BaseCorridorFloorTiles, indexes.VariantCorridorFloorTiles, ecb);
+        GenerateWalls(roomsWalls, indexes.BaseRoomWallTiles, indexes.VariantRoomWallTiles, ecb);
+        GenerateWalls(corridorsWalls, indexes.BaseCorridorWallTiles, indexes.VariantCorridorWallTiles, ecb);
 
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] LevelRecreationSystem ends");
     }
@@ -101,8 +106,8 @@ public partial struct LevelRecreationSystem : ISystem {
 
     private void GenerateFloor(
         NativeList<Tile> source,
-        NativeArray<Entity> basic,
-        NativeArray<Entity> variant,
+        int2 basic,
+        int2 variant,
         EntityCommandBuffer ecb) {
 
         foreach (var tile in source) {
@@ -112,8 +117,8 @@ public partial struct LevelRecreationSystem : ISystem {
     }
 
     private void GenerateWalls(NativeList<Tile> source,
-        NativeArray<Entity> basic,
-        NativeArray<Entity> variant,
+        int2 basic,
+        int2 variant,
         EntityCommandBuffer ecb) {
 
         foreach (var tile in source) {
@@ -132,8 +137,8 @@ public partial struct LevelRecreationSystem : ISystem {
     private void GenerateTile(
         Tile tile,
         EntityCommandBuffer ecb,
-        NativeArray<Entity> basic,
-        NativeArray<Entity> variant,
+        int2 basic,
+        int2 variant,
         quaternion rotation,
         bool basicOnly) {
         var prefab = GetRandomPrefab(basic, variant, basicOnly);
@@ -147,11 +152,11 @@ public partial struct LevelRecreationSystem : ISystem {
         ecb.AddComponent(e, new LevelEntity());
     }
 
-    private Entity GetRandomPrefab(NativeArray<Entity> basic, NativeArray<Entity> variant, bool basicOnly) {
+    private Entity GetRandomPrefab(int2 basic, int2 variant, bool basicOnly) {
         if (!basicOnly && _random.NextFloat() < _variantProbability) {
-            return variant[_random.NextInt(0, variant.Length)];
+            return _prefabs[_random.NextInt(variant.x, variant.y)].Prefab;
         }
-        return basic[_random.NextInt(0, basic.Length)];
+        return _prefabs[_random.NextInt(basic.x, basic.y)].Prefab;
     }
     private NativeHashMap<int, quaternion> GetAngles(Allocator allocator) {
         var angles = new NativeHashMap<int, quaternion>(4, allocator);
