@@ -125,23 +125,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Color.b
-      value: 0.10234957
+      value: 0.1262905
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Color.g
-      value: 0.47271532
+      value: 0.49057502
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Color.r
-      value: 0.8679245
+      value: 0.6226415
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Intensity
-      value: 0.71
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3267485197947008695, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Name
@@ -185,6 +185,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526004205315778956, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217246108389088108, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

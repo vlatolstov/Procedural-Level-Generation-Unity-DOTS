@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2182347356027195294, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3267485197947008695, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_Name
@@ -491,6 +491,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526004205315778956, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217246108389088108, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8255878241143802411, guid: edfec78ddbbc26746b2b29834141d8cd, type: 3}

@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 865541104474868085, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_Shadows.m_NearPlane
@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780237468796589778, guid: 3b4fc06da1b1aac4e8ad70d3a53cd925, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
