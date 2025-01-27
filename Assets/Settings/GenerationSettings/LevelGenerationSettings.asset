@@ -18,11 +18,11 @@ MonoBehaviour:
   CellsPerRoom: 4
   LevelScale: 1
   VariationChance: 12
-  RoomsCount: 4
-  InnerZoneHallsCount: 1
+  RoomsCount: 1
+  InnerZoneHallsCount: 0
   AdditionalHallEntranceProbability: 100
   MinCorridorWidth: 1
   MaxCorridorWidth: 2
-  ConnectNotMSTNodesProbability: 100
+  ConnectNotMSTNodesProbability: 33
   NodesPercentToRemove: 33
-  AllowedTypesMask: 1
+  AllowedTypesMask: 2

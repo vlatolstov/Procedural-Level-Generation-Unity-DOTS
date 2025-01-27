@@ -4,10 +4,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-using UnityEngine.UIElements;
-
-using static UnityEditor.UIElements.ToolbarMenu;
-
 [UpdateInGroup(typeof(LevelRecreationSystemGroup))]
 [BurstCompile]
 public partial struct LevelRecreationSystem : ISystem {
@@ -26,7 +22,6 @@ public partial struct LevelRecreationSystem : ISystem {
         state.RequireForUpdate<GenerationRandomData>();
         state.RequireForUpdate<TilesIndexesInBufferComponent>();
     }
-
     [BurstCompile]
     public void OnUpdate(ref SystemState state) {
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] LevelRecreationSystem starts");
@@ -132,8 +127,6 @@ public partial struct LevelRecreationSystem : ISystem {
             }
         }
     }
-
-
     private void GenerateTile(
         Tile tile,
         EntityCommandBuffer ecb,
@@ -150,8 +143,15 @@ public partial struct LevelRecreationSystem : ISystem {
             Scale = _levelScale
         });
         ecb.AddComponent(e, new LevelEntity());
-    }
 
+        if (tile.IsGraphNode) {
+            ecb.AddComponent<IsGraphNodeComponent>(e);
+        }
+
+        if (tile.IsSpawnPoint) {
+            ecb.AddComponent<IsSpawnPointComponent>(e);
+        }
+    }
     private Entity GetRandomPrefab(int2 basic, int2 variant, bool basicOnly) {
         if (!basicOnly && _random.NextFloat() < _variantProbability) {
             return _prefabs[_random.NextInt(variant.x, variant.y + 1)].Prefab;
