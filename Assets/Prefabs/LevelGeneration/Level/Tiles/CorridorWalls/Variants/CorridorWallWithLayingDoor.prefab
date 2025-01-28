@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6566151135595935116
 Transform:
@@ -41,12 +41,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2713861103549986289}
+  - component: {fileID: 4057794173782833160}
   m_Layer: 0
   m_Name: CorridorWallWithLayingDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2713861103549986289
 Transform:
@@ -65,6 +66,27 @@ Transform:
   - {fileID: 6566151135595935116}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4057794173782833160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7829248268997529135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.05, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 0.65, z: 0.5}
 --- !u!1001 &5401991390516426460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,7 +155,12 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6456325510354382058, guid: 176a6912731b6ff41a5255578e960a27, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6456325510354382058, guid: 176a6912731b6ff41a5255578e960a27, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -154,6 +181,10 @@ PrefabInstance:
     - target: {fileID: 3705698513839145437, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
       propertyPath: m_Name
       value: Door_Iron_Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062320450035191357, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7150985664022186652, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -195,13 +226,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4062320450035191357, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3705698513839145437, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2900881507379253721}
   m_SourcePrefab: {fileID: 100100000, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
 --- !u!4 &4078823666169417402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7150985664022186652, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
   m_PrefabInstance: {fileID: 6604391489252885542}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7551070081210074619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3705698513839145437, guid: 92a105225a3c416449b9541ccdd28e1c, type: 3}
+  m_PrefabInstance: {fileID: 6604391489252885542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2900881507379253721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551070081210074619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.33465317, y: 0.5307402, z: 0.040735558}
+  m_Center: {x: 0.1666505, y: 0.27764282, z: 0.01977862}

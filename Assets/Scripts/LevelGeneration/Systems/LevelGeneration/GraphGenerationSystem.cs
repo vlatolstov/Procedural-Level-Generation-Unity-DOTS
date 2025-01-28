@@ -105,7 +105,7 @@ partial struct GraphGenerationSystem : ISystem {
     private NativeHashMap<int2, NativeList<int2>> ConstructGraphWithInnerNodes(int nodesCount) {
         var graph = new NativeHashMap<int2, NativeList<int2>>(nodesCount, Allocator.Temp);
         var visited = new NativeHashSet<int2>(nodesCount, Allocator.Temp);
-        //внутренние узлы
+        
         for (int j = _innerZone.From.x; j <= _innerZone.To.x; j += _cellSize) {
             for (int i = _innerZone.From.y; i <= _innerZone.To.y; i += _cellSize) {
 

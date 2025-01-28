@@ -1,6 +1,5 @@
 using UnityEngine;
 
-public class TileAuthoring : MonoBehaviour
-{
+public class TileAuthoring : MonoBehaviour {
     public RoomElement Element;
 }

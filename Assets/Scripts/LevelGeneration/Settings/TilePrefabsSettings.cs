@@ -15,7 +15,9 @@ public class TilePrefabsSettings : ScriptableObject {
     public GameObject[] VariantRoomWallTiles;
 
     [Header("TestRoomPrefab")]
+    [Tooltip("Size of referenced GameObject, in tiles.")]
     public int2 RoomSize;
     public RoomType RoomType;
+    [Tooltip("Generates blob asset of Tiles from 2D prefab.")]
     public GameObject TestRoomPrefab;
 }

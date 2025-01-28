@@ -69,6 +69,7 @@ public partial struct MatrixGenerationSystem : ISystem {
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] MatrixGenerationSystem ends");
     }
 
+    [BurstCompile]
     public void OnDestroy(ref SystemState state) {
         if (_matrix.IsCreated) {
             _matrix.Dispose();
@@ -131,7 +132,7 @@ public partial struct MatrixGenerationSystem : ISystem {
 [BurstCompile]
 struct FillMatrixJob : IJobParallelFor {
     public NativeArray<Tile> Matrix;
-    public int LevelSizeX;
+    [ReadOnly] public int LevelSizeX;
 
     public void Execute(int index) {
         int x = index % LevelSizeX;

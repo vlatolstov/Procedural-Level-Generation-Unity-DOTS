@@ -30,6 +30,10 @@ partial class InitiateLevelGenerationSystem : SystemBase {
         EntityManager.AddComponentData(levelGenerationSettingsEntity, GetLevelGenerationData(settings));
         EntityManager.AddComponentData(levelGenerationSettingsEntity, GetGenerationRandomData(settings));
 
+        foreach ((_, var player) in SystemAPI.Query<PlayerTag>().WithEntityAccess()) {
+            EntityManager.SetComponentEnabled<NeedToSpawnTag>(player, true);
+        }
+
         EntityManager.DestroyEntity(_query);
     }
 

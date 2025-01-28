@@ -1,6 +1,5 @@
 using Unity.Entities;
 
-[UpdateInGroup(typeof(SimulationSystemGroup))]
-[UpdateAfter(typeof(LevelGenerationSystemGroup))]
+[UpdateInGroup(typeof(PresentationSystemGroup))]
 public partial class PostGenerationSystemGroup : ComponentSystemGroup {
 }

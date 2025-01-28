@@ -4,10 +4,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-using UnityEngine.UIElements;
-
-using static UnityEditor.UIElements.ToolbarMenu;
-
 [UpdateInGroup(typeof(LevelRecreationSystemGroup))]
 [BurstCompile]
 public partial struct LevelRecreationSystem : ISystem {
@@ -26,7 +22,6 @@ public partial struct LevelRecreationSystem : ISystem {
         state.RequireForUpdate<GenerationRandomData>();
         state.RequireForUpdate<TilesIndexesInBufferComponent>();
     }
-
     [BurstCompile]
     public void OnUpdate(ref SystemState state) {
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] LevelRecreationSystem starts");
@@ -90,19 +85,6 @@ public partial struct LevelRecreationSystem : ISystem {
 
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] LevelRecreationSystem ends");
     }
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state) {
-        foreach (var prefabsData in SystemAPI.Query<TilePrefabsData>()) {
-            prefabsData.BaseCorridorFloorTiles.Dispose();
-            prefabsData.VariantCorridorFloorTiles.Dispose();
-            prefabsData.BaseCorridorWallTiles.Dispose();
-            prefabsData.VariantCorridorWallTiles.Dispose();
-            prefabsData.BaseRoomFloorTiles.Dispose();
-            prefabsData.VariantRoomFloorTiles.Dispose();
-            prefabsData.BaseRoomWallTiles.Dispose();
-            prefabsData.VariantRoomWallTiles.Dispose();
-        }
-    }
 
     private void GenerateFloor(
         NativeList<Tile> source,
@@ -112,10 +94,9 @@ public partial struct LevelRecreationSystem : ISystem {
 
         foreach (var tile in source) {
             var rotation = quaternion.RotateY(math.radians(0 + 90f * _random.NextInt(0, 3)));
-            GenerateTile(tile, ecb, basic, variant, rotation, false);
+            GenerateTile(tile, ecb, basic, variant, rotation, tile.IsSpawnPoint);
         }
     }
-
     private void GenerateWalls(NativeList<Tile> source,
         int2 basic,
         int2 variant,
@@ -132,8 +113,6 @@ public partial struct LevelRecreationSystem : ISystem {
             }
         }
     }
-
-
     private void GenerateTile(
         Tile tile,
         EntityCommandBuffer ecb,
@@ -150,8 +129,15 @@ public partial struct LevelRecreationSystem : ISystem {
             Scale = _levelScale
         });
         ecb.AddComponent(e, new LevelEntity());
-    }
 
+        if (tile.IsGraphNode) {
+            ecb.AddComponent<IsGraphNodeComponent>(e);
+        }
+
+        if (tile.IsSpawnPoint) {
+            ecb.AddComponent<IsSpawnPointComponent>(e);
+        }
+    }
     private Entity GetRandomPrefab(int2 basic, int2 variant, bool basicOnly) {
         if (!basicOnly && _random.NextFloat() < _variantProbability) {
             return _prefabs[_random.NextInt(variant.x, variant.y + 1)].Prefab;

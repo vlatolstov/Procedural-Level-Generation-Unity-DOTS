@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c9af2795dce0ff249926ceaa1c7b3bbf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 291374
+  packageName: Lowpoly Medieval Weapon Pack
+  packageVersion: 1.0
+  assetPath: Assets/VertexModeler/LowpolyMedievalWeaponPack/Scene/Sample/GlobalVolumeProfile.asset
+  uploadId: 683636
