@@ -107,7 +107,7 @@ public partial struct LevelRecreationSystem : ISystem {
 
         foreach (var tile in source) {
             var rotation = quaternion.RotateY(math.radians(0 + 90f * _random.NextInt(0, 3)));
-            GenerateTile(tile, ecb, basic, variant, rotation, false);
+            GenerateTile(tile, ecb, basic, variant, rotation, tile.IsSpawnPoint);
         }
     }
 

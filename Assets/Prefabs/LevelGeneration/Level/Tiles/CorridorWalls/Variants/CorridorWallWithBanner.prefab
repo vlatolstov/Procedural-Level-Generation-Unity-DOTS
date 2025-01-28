@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2469915634046433280
 Transform:
@@ -42,12 +42,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672697838854720746}
+  - component: {fileID: 7213479381436799065}
   m_Layer: 0
   m_Name: CorridorWallWithBanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &672697838854720746
 Transform:
@@ -66,6 +67,27 @@ Transform:
   - {fileID: 2469915634046433280}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7213479381436799065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674751525527182953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.05, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 0.65, z: 0.5}
 --- !u!1001 &3572699207853069451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,6 +96,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2469915634046433280}
     m_Modifications:
+    - target: {fileID: 1806112836465118411, guid: 07074c1174bb15346afdcbe69c2694d2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2339342865914056732, guid: 07074c1174bb15346afdcbe69c2694d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.645
@@ -117,6 +143,10 @@ PrefabInstance:
     - target: {fileID: 7210307733809342231, guid: 07074c1174bb15346afdcbe69c2694d2, type: 3}
       propertyPath: m_Name
       value: Bench
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210307733809342231, guid: 07074c1174bb15346afdcbe69c2694d2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -196,6 +226,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6456325510354382058, guid: 176a6912731b6ff41a5255578e960a27, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -214,9 +248,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2469915634046433280}
     m_Modifications:
+    - target: {fileID: 1468504309757921464, guid: 1e749517d68912b478ce1672575bdc70, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5682688896035951782, guid: 1e749517d68912b478ce1672575bdc70, type: 3}
       propertyPath: m_Name
       value: Banner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682688896035951782, guid: 1e749517d68912b478ce1672575bdc70, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7595369947492232727, guid: 1e749517d68912b478ce1672575bdc70, type: 3}
       propertyPath: m_LocalScale.x

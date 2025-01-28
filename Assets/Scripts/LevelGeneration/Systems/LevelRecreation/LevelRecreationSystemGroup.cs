@@ -5,7 +5,6 @@ using Unity.Scenes;
 
 
 [UpdateInGroup(typeof(SimulationSystemGroup))]
-[UpdateBefore(typeof(PostGenerationSystemGroup))]
 public partial class LevelRecreationSystemGroup : ComponentSystemGroup
 {
     

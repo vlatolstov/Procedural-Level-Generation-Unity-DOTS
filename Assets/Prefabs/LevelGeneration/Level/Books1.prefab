@@ -104,7 +104,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_Big_Brown
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8169520561329651930, guid: 2569a62b0421feb4fbb320665445719f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -182,7 +183,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_Big_Green
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4514716565785830675, guid: 52cfc34cb5ec6b84bb03dc381684a09a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -260,7 +262,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_Brown
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3121784523027434666, guid: 20dc69066f16acc48b952aed5b788376, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -338,7 +341,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_Big_Red
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5981562312196924897, guid: 9219eeec429c86b459f29c67fd3e5e05, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -416,7 +420,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5254175624772305642, guid: 6e5642efdd933964d9719bb799658cb4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

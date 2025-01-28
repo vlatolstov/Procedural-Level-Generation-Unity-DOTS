@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2616647707371670569}
+  - component: {fileID: 8843814927565428290}
   m_Layer: 0
   m_Name: RoomWall_WitchBooks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2616647707371670569
 Transform:
@@ -40,6 +41,27 @@ Transform:
   - {fileID: 1228722928463390028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8843814927565428290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664768558589043080}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.05, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 0.65, z: 0.5}
 --- !u!1001 &526413984210313240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,7 +130,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1604264725142624635, guid: ab52575a7bb2b244a9dd104afe101920, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -129,6 +152,14 @@ PrefabInstance:
     - target: {fileID: 7432622557476056704, guid: cb9bc6b96d830b64293c9fdff99b1743, type: 3}
       propertyPath: m_Name
       value: Shelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432622557476056704, guid: cb9bc6b96d830b64293c9fdff99b1743, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432622557476056707, guid: cb9bc6b96d830b64293c9fdff99b1743, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7432622557476287136, guid: cb9bc6b96d830b64293c9fdff99b1743, type: 3}
       propertyPath: m_LocalScale.x
@@ -204,6 +235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2616647707371670569}
     m_Modifications:
+    - target: {fileID: 572205288214287223, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6602433573600681844, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -255,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 6983746372843899383, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
       propertyPath: m_Name
       value: Wall_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983746372843899383, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -318,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Books1
       objectReference: {fileID: 0}
+    - target: {fileID: 5825549684505436197, guid: ffaa42380649d834aa5919b9b5073387, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -380,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Books1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5825549684505436197, guid: ffaa42380649d834aa5919b9b5073387, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -441,6 +488,10 @@ PrefabInstance:
     - target: {fileID: 5825549684505436197, guid: ffaa42380649d834aa5919b9b5073387, type: 3}
       propertyPath: m_Name
       value: Books1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825549684505436197, guid: ffaa42380649d834aa5919b9b5073387, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -529,7 +580,8 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3918751411058678635, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -638,7 +690,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalBall
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3454277780500744128, guid: 7234c83608121694ebb0c6175d854ed0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -699,6 +752,10 @@ PrefabInstance:
     - target: {fileID: 5825549684505436197, guid: ffaa42380649d834aa5919b9b5073387, type: 3}
       propertyPath: m_Name
       value: Books1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825549684505436197, guid: ffaa42380649d834aa5919b9b5073387, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

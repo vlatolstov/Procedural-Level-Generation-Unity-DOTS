@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5927193016800407007}
+  - component: {fileID: -9054378717134243349}
   m_Layer: 0
   m_Name: RoomWall_WithFireplace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5927193016800407007
 Transform:
@@ -34,6 +35,27 @@ Transform:
   - {fileID: 4804380601234100171}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &-9054378717134243349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5330381775636435481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.05, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 0.65, z: 0.5}
 --- !u!1001 &392570380185954567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,6 +64,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5927193016800407007}
     m_Modifications:
+    - target: {fileID: 2922107562325671188, guid: 55320ad6284175349b1008aaf7238c7a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2922107562325671189, guid: 55320ad6284175349b1008aaf7238c7a, type: 3}
       propertyPath: m_Type
       value: 2
@@ -126,6 +152,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireplace
       objectReference: {fileID: 0}
+    - target: {fileID: 2922107563030212518, guid: 55320ad6284175349b1008aaf7238c7a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922107563542401957, guid: 55320ad6284175349b1008aaf7238c7a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -175,6 +209,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5927193016800407007}
     m_Modifications:
+    - target: {fileID: 572205288214287223, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6602433573600681844, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -226,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 6983746372843899383, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
       propertyPath: m_Name
       value: Wall_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983746372843899383, guid: 6fd3363064ac1484788622aa5719b038, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -305,7 +347,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cauldron_Full
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6796805398523835098, guid: d6ade90f396755c42b43f8006323ec2c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
