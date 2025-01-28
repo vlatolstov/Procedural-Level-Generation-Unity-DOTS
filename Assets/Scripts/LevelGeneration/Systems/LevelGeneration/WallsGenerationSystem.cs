@@ -27,8 +27,6 @@ partial struct WallsGenerationSystem : ISystem {
     public void OnUpdate(ref SystemState state) {
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] WallsGenerationSystem starts");
 
-        var config = _query.GetSingletonEntity();
-
         var level = SystemAPI.GetSingleton<LevelData>().Level;
         _matrix = SystemAPI.GetSingleton<MatrixData>().Matrix;
         

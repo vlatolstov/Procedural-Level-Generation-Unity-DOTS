@@ -1,4 +1,3 @@
-using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
@@ -29,7 +28,7 @@ partial class PlayerMovementSystem : SystemBase {
         float speed = input.LShift ? _speed * 2 : _speed;
         var forward = math.normalize(localToWorld.Value.c2.xyz);
         var right = math.normalize(localToWorld.Value.c0.xyz);
-        float3 localVelocity = (right * input.Horizontal + forward * input.Vertical) * speed;
+        float3 localVelocity = math.clamp((right * input.Horizontal + forward * input.Vertical), new float3(-1), new float3(1)) * speed;
         playerVelocity.ValueRW.Linear = new(localVelocity.x, playerVelocity.ValueRO.Linear.y, localVelocity.z);
     }
 }

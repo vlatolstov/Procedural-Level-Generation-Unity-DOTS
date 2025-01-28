@@ -1,14 +1,10 @@
 using Unity.Collections;
 using Unity.Entities;
-using Unity.Entities.Editor;
 using Unity.Mathematics;
 
 using UnityEngine;
 
-using static UnityEngine.EventSystems.EventTrigger;
-
 class TilePrefabsAuthoring : MonoBehaviour {
-
     public TilePrefabsSettings PrefabsSettings;
 }
 
@@ -25,7 +21,6 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
 
         CreateTileCoordinatesData(entity, settings);
     }
-
     private TilesIndexesInBufferComponent ConvertPrefabsToEntities(TilePrefabsSettings settings, ref DynamicBuffer<TilePrefab> buffer) {
 
         int index = 0;
@@ -66,7 +61,6 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
 
         return result;
     }
-
     private void ConvertToEntities(GameObject[] source, ref int index, ref DynamicBuffer<TilePrefab> buffer) {
         foreach (var go in source) {
             TilePrefab prefab = new() {
@@ -77,7 +71,6 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
             index++;
         }
     }
-
     private void CreateTileCoordinatesData(Entity entity, TilePrefabsSettings settings) {
         var roomPrefab = settings.TestRoomPrefab;
         var childrenTileInfo = roomPrefab.GetComponentsInChildren<TileAuthoring>();
@@ -108,12 +101,10 @@ class TilePrefabsAuthoringBaker : Baker<TilePrefabsAuthoring> {
         builder.Dispose();
     }
 }
-
 public struct TestRoomTileCoordinatesData : IComponentData {
     public BlobAssetReference<TestRoomTileBlob> BlobReference;
     public int2 Size;
 }
-
 public struct TestRoomTileBlob {
     public BlobArray<Tile> TileBlob;
 }

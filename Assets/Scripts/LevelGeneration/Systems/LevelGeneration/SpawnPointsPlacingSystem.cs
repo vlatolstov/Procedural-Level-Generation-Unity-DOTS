@@ -34,7 +34,7 @@ partial struct SpawnPointsPlacingSystem : ISystem {
         };
 
         state.Dependency = job.Schedule(matrix.Length, 64, state.Dependency);
-        
+
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] SpawnPointsPlacingSystem ends");
     }
 }
@@ -45,8 +45,8 @@ public struct SpawnPointsPlacingJob : IJobParallelFor {
     public RoomType AllowedTypesMask;
     public void Execute(int index) {
         var tile = Matrix[index];
-        if ((tile.Type & AllowedTypesMask) > 0 &&
-            tile.IsGraphNode) {
+        if (tile.IsGraphNode &&
+            (tile.Type & AllowedTypesMask) > 0) {
             tile.IsSpawnPoint = true;
             Matrix[index] = tile;
         }

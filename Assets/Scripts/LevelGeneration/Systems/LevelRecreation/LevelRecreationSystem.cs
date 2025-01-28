@@ -85,19 +85,6 @@ public partial struct LevelRecreationSystem : ISystem {
 
         UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] LevelRecreationSystem ends");
     }
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state) {
-        foreach (var prefabsData in SystemAPI.Query<TilePrefabsData>()) {
-            prefabsData.BaseCorridorFloorTiles.Dispose();
-            prefabsData.VariantCorridorFloorTiles.Dispose();
-            prefabsData.BaseCorridorWallTiles.Dispose();
-            prefabsData.VariantCorridorWallTiles.Dispose();
-            prefabsData.BaseRoomFloorTiles.Dispose();
-            prefabsData.VariantRoomFloorTiles.Dispose();
-            prefabsData.BaseRoomWallTiles.Dispose();
-            prefabsData.VariantRoomWallTiles.Dispose();
-        }
-    }
 
     private void GenerateFloor(
         NativeList<Tile> source,
@@ -110,7 +97,6 @@ public partial struct LevelRecreationSystem : ISystem {
             GenerateTile(tile, ecb, basic, variant, rotation, tile.IsSpawnPoint);
         }
     }
-
     private void GenerateWalls(NativeList<Tile> source,
         int2 basic,
         int2 variant,

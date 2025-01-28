@@ -1,10 +1,12 @@
 using Unity.Entities;
-
 using UnityEngine;
 
 public class CameraSetupMono : MonoBehaviour {
     [SerializeField] private float _sensitivity;
     void Start() {
+
+        Cursor.lockState = CursorLockMode.Locked;
+
         var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
         var cameraEntity = entityManager.CreateEntity();

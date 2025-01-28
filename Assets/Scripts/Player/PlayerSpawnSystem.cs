@@ -1,4 +1,3 @@
-using Unity.Burst;
 using Unity.Entities;
 using Unity.Collections;
 using Unity.Transforms;
@@ -6,46 +5,41 @@ using Unity.Transforms;
 [UpdateInGroup(typeof(PostGenerationSystemGroup))]
 [UpdateBefore(typeof(EndGenerationSystem))]
 
-partial struct PlayerSpawnSystem : ISystem {
+partial class PlayerSpawnSystem : SystemBase {
     private EntityQuery _spawnPoints;
     private EntityQuery _players;
 
-    [BurstCompile]
-    public void OnCreate(ref SystemState state) {
+    protected override void OnCreate() {
         var builder1 = new EntityQueryBuilder(Allocator.Temp)
             .WithAll<IsSpawnPointComponent, LocalTransform>();
         var builder2 = new EntityQueryBuilder(Allocator.Temp)
             .WithAll<PlayerTag, NeedToSpawnTag, LocalTransform>();
-        _spawnPoints = state.GetEntityQuery(builder1);
-        _players = state.GetEntityQuery(builder2);
+        _spawnPoints = GetEntityQuery(builder1);
+        _players = GetEntityQuery(builder2);
         
-        state.RequireForUpdate(_players);
-        state.RequireForUpdate(_spawnPoints);
-        state.RequireForUpdate<GenerationRandomData>();
+        RequireForUpdate(_players);
+        RequireForUpdate(_spawnPoints);
+        RequireForUpdate<GenerationRandomData>();
     }
 
-    [BurstCompile]
-    public void OnUpdate(ref SystemState state) {
-        UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] PlayerSpawnSystem starts");
+    protected override void OnUpdate() {
+        UnityEngine.Debug.Log($"[{World.Name}] PlayerSpawnSystem starts");
 
-        var em = state.EntityManager;
-        var random = SystemAPI.GetSingletonRW<GenerationRandomData>().ValueRW.Value;
         var spawnPoints = _spawnPoints.ToComponentDataArray<LocalTransform>(Allocator.Temp);
         var players = _players.ToEntityArray(Allocator.Temp);
 
         for (int i = 0; i < players.Length; i++) {
             var curTransform = SystemAPI.GetComponent<LocalTransform>(players[i]);
-            var nextPos = spawnPoints[random.NextInt(0, spawnPoints.Length)].Position;
+            var nextPos = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)].Position;
             curTransform.Position = new(nextPos.x, 0.3f, nextPos.z);
-            em.SetComponentEnabled<NeedToSpawnTag>(players[i], false);
-            em.SetComponentData(players[i], curTransform);
-            UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] Player {i} spawned");
+            EntityManager.SetComponentEnabled<NeedToSpawnTag>(players[i], false);
+            EntityManager.SetComponentData(players[i], curTransform);
+            UnityEngine.Debug.Log($"[{World.Name}] Player {i + 1} spawned");
         }
 
-        UnityEngine.Debug.Log($"[{state.WorldUnmanaged.Name}] PlayerSpawnSystem ends");
+        UnityEngine.Debug.Log($"[{World.Name}] PlayerSpawnSystem ends");
     }
 }
 
 public struct NeedToSpawnTag : IComponentData, IEnableableComponent {
-
 }

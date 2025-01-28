@@ -1,4 +1,3 @@
-
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -21,7 +20,6 @@ partial class CameraPositioningSystem : SystemBase {
         var cameraComponent = SystemAPI.ManagedAPI.GetSingleton<MainCameraComponent>();
 
         cameraComponent.Camera.transform.position = new(playerTransform.ValueRO.Position.x, playerTransform.ValueRO.Position.y + 0.1f, playerTransform.ValueRO.Position.z);
-
 
         _xRotation -= input.MouseY * cameraComponent.Sensitivity;
         _xRotation = math.clamp(_xRotation, -90f, 90f);

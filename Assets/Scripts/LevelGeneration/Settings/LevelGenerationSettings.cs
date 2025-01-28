@@ -1,7 +1,5 @@
 using Unity.Entities;
-
 using UnityEditor;
-
 using UnityEngine;
 
 
@@ -9,13 +7,17 @@ using UnityEngine;
 public class LevelGenerationSettings : ScriptableObject {
 
     [Header("GenerationRandomData")]
+    [Tooltip("Leave zero to get random seed.")]
     public uint Seed;
 
     [Space]
     [Header("LevelPropertiesData")]
+    [Tooltip("Size of one graph node/cell in tiles")]
     public int CellSize;
-    public int SideRoomsGap;
+    [Tooltip("Number of cells for one room. Affects pregenerated matrix size.")]
     public int CellsPerRoom;
+    [Tooltip("Size of outer side layer.")]
+    public int SideRoomsGap;
     [Tooltip("Scale to convert level from integer based matrix.")]
     public float LevelScale;
     [Tooltip("Probability of creating tile variant instead of base, in percents, value will be clamped in range 0 to 100.")]
@@ -25,7 +27,7 @@ public class LevelGenerationSettings : ScriptableObject {
     [Header("RoomsPropertiesData")]
     public int RoomsCount;
     public int InnerZoneHallsCount;
-    [Tooltip("Probability of adding aditional entrances in hall, in percents, value will be clamped in range 0 to 100. Value will reduce by 25% after each iterration.")]
+    [Tooltip("Probability of adding aditional entrances in hall (standart - 1 entrance), in percents, value will be clamped in range 0 to 100. Value will reduce by 25% after each iterration.")]
     public int AdditionalHallEntranceProbability;
 
     [Space]
@@ -34,10 +36,12 @@ public class LevelGenerationSettings : ScriptableObject {
     public int MaxCorridorWidth;
     [Tooltip("Probability of adding aditional connections between corridors, in percents, value will be clamped in range 0 to 100.")]
     public int ConnectNotMSTNodesProbability;
+    [Tooltip("Nodes percentage, that will be removed from generated graph.")]
     public int NodesPercentToRemove;
 
     [Space]
     [Header("SpawnPointsPropertiesData")]
+    [Tooltip("Mask with allowed spawn points types.")]
     public RoomType AllowedTypesMask;
 
     public void GenerateLevel() {

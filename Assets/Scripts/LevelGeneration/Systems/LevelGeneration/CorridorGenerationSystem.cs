@@ -54,13 +54,10 @@ public partial struct CorridorGenerationSystem : ISystem {
     }
 
     private readonly int ConvertToIntegerIndex(int2 position) => position.y * _levelSize.x + position.x;
-
-    [BurstCompile]
     private void GenerateCorridors() {
         var nodes = GetNodesFromEdges();
         RunKruskalAlgorithm(nodes);
     }
-
     private NativeHashMap<int2, int> GetNodesFromEdges() {
         var nodes = new NativeHashMap<int2, int>(_edges.Length, Allocator.Temp);
 
@@ -80,7 +77,6 @@ public partial struct CorridorGenerationSystem : ISystem {
         
         return nodes;
     }
-
     private void RunKruskalAlgorithm(NativeHashMap<int2, int> nodes) {
         var dsu = new DSU(nodes.Count, Allocator.Temp);
 
@@ -92,13 +88,12 @@ public partial struct CorridorGenerationSystem : ISystem {
                 BuildCorridor(edge);
             }
             else {
-                if (_random.NextFloat() <= _connectNotMSTNodesProbability) {
+                if (_random.NextFloat() < _connectNotMSTNodesProbability) {
                     BuildCorridor(edge);
                 }
             }
         }
     }
-
     private void BuildCorridor(Edge edge) {
         int2 a = edge.PointA;
         int2 b = edge.PointB;
