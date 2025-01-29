@@ -72,14 +72,13 @@ Collections 2.5.2
 Burst 18.18
 
 # How can i try it?
-1. Download repository.
-2. Add project to Unity Hub.
-3. Enter play mode.
-4. Navigate to the Settings folder.
-5. Open a LevelGenerationSettings ScriptableObject for level configuration.
-6. Make settings changes and push Generate Level button.
-7. Explore the level through the Game or Scene windows.
-8. Repeat from step number 6.
+1. Open GenerationScene.
+2. Enter play mode.
+3. Navigate to the Settings folder.
+4. Open a LevelGenerationSettings ScriptableObject for level configuration.
+5. Make settings changes and push Generate Level button.
+6. Explore the level through the Game or Scene windows.
+7. Repeat from step number 6.
 
 # Use of third-party assets for visualisation
 
