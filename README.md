@@ -78,7 +78,7 @@ Burst 18.18
 4. Open a LevelGenerationSettings ScriptableObject for level configuration.
 5. Make settings changes and push Generate Level button.
 6. Explore the level through the Game or Scene windows.
-7. Repeat from step number 6.
+7. Repeat from step number 5.
 
 # Use of third-party assets for visualisation
 
